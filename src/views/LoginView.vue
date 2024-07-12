@@ -1,5 +1,5 @@
 <script setup>
-import NavbarComponent from '@/components/HeadComponent.vue';
+import HeadComponent from '@/components/HeadComponent.vue';
 import { RouterLink } from 'vue-router';
 
 
@@ -7,7 +7,7 @@ import { RouterLink } from 'vue-router';
 
 <template>
   <header>
-    <NavbarComponent />
+    <HeadComponent />
   </header>
   <main>
     <div class="container d-flex flex-column text-dark custom-container">
