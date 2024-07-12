@@ -38,10 +38,10 @@ import { RouterLink } from 'vue-router';
             <router-link to="/register"><button type="submit" class="btn text-white custom-button-daftar">
                 Daftar
               </button></router-link>
-
-            <button type="submit" class="btn text-white custom-button-daftar custom-button-login">
-              Login
-            </button>
+            <router-link to="/home"><button type="submit"
+                class="btn text-white custom-button-daftar custom-button-login">
+                Login
+              </button></router-link>
           </div>
         </form>
       </div>
