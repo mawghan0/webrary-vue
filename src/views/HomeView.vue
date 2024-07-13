@@ -389,6 +389,38 @@
         </div>
       </div>
       <!-- all -->
+      <footer container>
+        <div class="masukan">
+          <form action="">
+            <label for="">
+              <h5>Ada masukan untuk kami?</h5>
+            </label>
+            <input type="text" name="" id="" placeholder="Nama">
+            <input type="email" name="" id="" placeholder="Email">
+            <input type="text" name="" id="" placeholder="Nama">
+            <input type="button" value="Kirim">
+          </form>
+        </div>
+        <div class="peminjaman">
+          <h5>Peminjaman</h5>
+          <h6>Perpustakaan</h6>
+          <h6>Daftar Buku</h6>
+          <h6>Peminjaman</h6>
+          <h6>Pengembalian</h6>
+        </div>
+        <div class="hubungi">
+          <h5>Hubungi Kami</h5>
+          <div class="logo">
+            fb,twt,ig
+          </div>
+        </div>
+        <div class="lainnya">
+          <h5>Lainnya</h5>
+          <h6>Syarat & Ketentuan</h6>
+          <h6>Kebijakan & Privasi</h6>
+          <h6>Bantuan</h6>
+        </div>
+      </footer>
     </div>
 
 
@@ -407,6 +439,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+
 }
 
 .navbar-brand img {
@@ -454,7 +487,8 @@ main {
   width: 280px;
   height: 370px;
   overflow: hidden;
-  /* border: 10px black solid; */
+  border: 3px black solid;
+  border-radius: 10px;
 }
 
 .hero-img img {
@@ -468,6 +502,7 @@ main {
   display: flex;
   height: 370px;
   flex-direction: column;
+
 
   #judul h3 {
     font-weight: 400;
@@ -492,11 +527,11 @@ main {
   display: flex;
   justify-content: space-around;
   width: 90%;
-
+  column-gap: 24px;
 }
 
 .book-popular {
-  width: 185px;
+  flex-basis: 15%;
   height: 320px;
   overflow: hidden;
   display: flex;
@@ -560,7 +595,7 @@ main {
   display: flex;
   height: 110px;
   padding: 10px 10px;
-box-shadow: 10px 10px 20px black;
+  box-shadow: 10px 10px 20px black;
   background-color: #D9D9D9;
 }
 
@@ -602,8 +637,8 @@ box-shadow: 10px 10px 20px black;
   justify-content: space-evenly;
   width: 90%;
   flex-wrap: wrap;
-  column-gap: 40px;
-  row-gap: 100px;
+  column-gap: 23px;
+  row-gap: 50px;
 }
 
 .book-all {
@@ -615,7 +650,7 @@ box-shadow: 10px 10px 20px black;
   justify-content: space-between;
   border-radius: 10px;
   background-color: #D9D9D9;
-  flex-basis: 12%;
+  flex-basis: 15%;
   box-shadow: 10px 10px 20px black;
 }
 
@@ -628,7 +663,6 @@ box-shadow: 10px 10px 20px black;
 .text-all {
   padding: 10px;
 }
+
 /* all css */
-
-
 </style>
