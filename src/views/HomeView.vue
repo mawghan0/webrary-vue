@@ -93,6 +93,120 @@
           </div>
         </div>
       </div>
+      <!-- popular -->
+      <div class="container-fluid custom-trio">
+        <div class="rangking">
+          <div class="trio-sort">
+            <h1>Rangking</h1>
+          </div>
+          <div class="trio-book">
+            <div class="trio-single-book">
+              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+              <div class="trio-text">
+                <h2>Judul buku</h2>
+                <p>genre buku</p>
+                <p>&star; 5</p>
+              </div>
+            </div><div class="trio-single-book">
+              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+              <div class="trio-text">
+                <h2>Judul buku</h2>
+                <p>genre buku</p>
+                <p>&star; 5</p>
+              </div>
+            </div><div class="trio-single-book">
+              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+              <div class="trio-text">
+                <h2>Judul buku</h2>
+                <p>genre buku</p>
+                <p>&star; 5</p>
+              </div>
+            </div><div class="trio-single-book">
+              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+              <div class="trio-text">
+                <h2>Judul buku</h2>
+                <p>genre buku</p>
+                <p>&star; 5</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="newArrival">
+          <div class="trio-sort">
+            <h1>Rangking</h1>
+          </div>
+          <div class="trio-book">
+            <div class="trio-single-book">
+              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+              <div class="trio-text">
+                <h2>Judul buku</h2>
+                <p>genre buku</p>
+                <p>&star; 5</p>
+              </div>
+            </div><div class="trio-single-book">
+              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+              <div class="trio-text">
+                <h2>Judul buku</h2>
+                <p>genre buku</p>
+                <p>&star; 5</p>
+              </div>
+            </div><div class="trio-single-book">
+              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+              <div class="trio-text">
+                <h2>Judul buku</h2>
+                <p>genre buku</p>
+                <p>&star; 5</p>
+              </div>
+            </div><div class="trio-single-book">
+              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+              <div class="trio-text">
+                <h2>Judul buku</h2>
+                <p>genre buku</p>
+                <p>&star; 5</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="recommended">
+          <div class="trio-sort">
+            <h1>Rangking</h1>
+          </div>
+          <div class="trio-book">
+            <div class="trio-single-book">
+              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+              <div class="trio-text">
+                <h2>Judul buku</h2>
+                <p>genre buku</p>
+                <p>&star; 5</p>
+              </div>
+            </div>
+            <div class="trio-single-book">
+              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+              <div class="trio-text">
+                <h2>Judul buku</h2>
+                <p>genre buku</p>
+                <p>&star; 5</p>
+              </div>
+            </div>
+            <div class="trio-single-book">
+              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+              <div class="trio-text">
+                <h2>Judul buku</h2>
+                <p>genre buku</p>
+                <p>&star; 5</p>
+              </div>
+            </div>
+            <div class="trio-single-book">
+              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+              <div class="trio-text">
+                <h2>Judul buku</h2>
+                <p>genre buku</p>
+                <p>&star; 5</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -154,7 +268,7 @@ main {
   width: 280px;
   height: 370px;
   overflow: hidden;
-  border: 10px black solid;
+  /* border: 10px black solid; */
 }
 
 .hero-img img {
@@ -215,5 +329,62 @@ main {
 .text-popular {
   padding: 10px;
 
+}
+
+/* pupular css */
+
+.custom-trio {
+  display: flex;
+  width: 90%;
+  padding: 50px;
+  justify-content: space-between;
+  height: 750px;
+  margin-top: 50px;
+}
+
+.rangking,
+.newArrival,
+.recommended {
+  /* border: 1px black solid; */
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.trio-sort {
+  margin-bottom: 50px;
+  margin: 0 auto 50px;
+  padding: 10px 50px 10px;
+  display: flex;
+  background-color: #D9D9D9;
+  border-radius: 40px;
+}
+
+.trio-book {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.trio-single-book {
+  display: flex;
+  height: 110px;
+  padding: 10px 10px;
+
+  background-color: #D9D9D9;
+}
+
+.trio-single-book img {
+  height: 90px;
+  width: 60px;
+  object-fit: cover;
+  box-shadow: 0 0 10px black;
+}
+
+.trio-text{
+  padding: 0 40px;
+  line-height: 10px;
 }
 </style>
