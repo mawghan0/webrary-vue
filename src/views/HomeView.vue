@@ -107,21 +107,24 @@
                 <p>genre buku</p>
                 <p>&star; 5</p>
               </div>
-            </div><div class="trio-single-book">
+            </div>
+            <div class="trio-single-book">
               <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
               <div class="trio-text">
                 <h2>Judul buku</h2>
                 <p>genre buku</p>
                 <p>&star; 5</p>
               </div>
-            </div><div class="trio-single-book">
+            </div>
+            <div class="trio-single-book">
               <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
               <div class="trio-text">
                 <h2>Judul buku</h2>
                 <p>genre buku</p>
                 <p>&star; 5</p>
               </div>
-            </div><div class="trio-single-book">
+            </div>
+            <div class="trio-single-book">
               <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
               <div class="trio-text">
                 <h2>Judul buku</h2>
@@ -143,21 +146,24 @@
                 <p>genre buku</p>
                 <p>&star; 5</p>
               </div>
-            </div><div class="trio-single-book">
+            </div>
+            <div class="trio-single-book">
               <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
               <div class="trio-text">
                 <h2>Judul buku</h2>
                 <p>genre buku</p>
                 <p>&star; 5</p>
               </div>
-            </div><div class="trio-single-book">
+            </div>
+            <div class="trio-single-book">
               <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
               <div class="trio-text">
                 <h2>Judul buku</h2>
                 <p>genre buku</p>
                 <p>&star; 5</p>
               </div>
-            </div><div class="trio-single-book">
+            </div>
+            <div class="trio-single-book">
               <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
               <div class="trio-text">
                 <h2>Judul buku</h2>
@@ -207,6 +213,182 @@
           </div>
         </div>
       </div>
+      <div class="container-fluid container-all">
+        <div class="all-text">
+          <h1>All Books</h1>
+        </div>
+        <div class="container-fluid container-all-main">
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-all">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-all">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- all -->
     </div>
 
 
@@ -222,6 +404,9 @@
 
 .custom-navbar {
   height: 140px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .navbar-brand img {
@@ -250,6 +435,7 @@ main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin-top: 140px;
 }
 
 .container-hero {
@@ -383,8 +569,62 @@ main {
   box-shadow: 0 0 10px black;
 }
 
-.trio-text{
+.trio-text {
   padding: 0 40px;
   line-height: 10px;
 }
+
+/* trio css */
+
+.container-all {
+  margin-bottom: 100px;
+  padding: 0 20px;
+}
+
+.all-text {
+  width: 390px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  background-color: #D9D9D9;
+  text-align: center;
+  margin: 50px 0 50px 130px;
+  padding: 35px 0;
+}
+
+.container-all-main {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 100px;
+}
+
+.book-all {
+  width: 185px;
+  height: 320px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+  flex-basis: 12%;
+}
+
+.book-all img {
+  width: 100%;
+  height: 220px;
+  object-fit: fill;
+}
+
+.text-all {
+  padding: 10px;
+}
+/* all css */
+
+
 </style>
