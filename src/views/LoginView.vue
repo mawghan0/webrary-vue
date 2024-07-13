@@ -58,7 +58,7 @@ import { RouterLink } from 'vue-router';
   background-color: #d9d9d9;
   border-radius: 73px;
   padding: 50px;
-  margin: 130px auto;
+  margin: 70px auto;
 }
 
 .custom-img-login {
