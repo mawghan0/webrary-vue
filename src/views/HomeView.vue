@@ -504,6 +504,7 @@ main {
   justify-content: space-between;
   border-radius: 10px;
   background-color: #D9D9D9;
+  box-shadow: 10px 10px 20px black;
 }
 
 .book-popular img {
@@ -544,6 +545,7 @@ main {
   display: flex;
   background-color: #D9D9D9;
   border-radius: 40px;
+  box-shadow: 10px 10px 20px black;
 }
 
 .trio-book {
@@ -551,14 +553,14 @@ main {
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .trio-single-book {
   display: flex;
   height: 110px;
   padding: 10px 10px;
-
+box-shadow: 10px 10px 20px black;
   background-color: #D9D9D9;
 }
 
@@ -592,6 +594,7 @@ main {
   text-align: center;
   margin: 50px 0 50px 130px;
   padding: 35px 0;
+  box-shadow: 10px 10px 20px black;
 }
 
 .container-all-main {
@@ -604,7 +607,7 @@ main {
 }
 
 .book-all {
-  width: 185px;
+  /* width: 185px; */
   height: 320px;
   overflow: hidden;
   display: flex;
@@ -613,6 +616,7 @@ main {
   border-radius: 10px;
   background-color: #D9D9D9;
   flex-basis: 12%;
+  box-shadow: 10px 10px 20px black;
 }
 
 .book-all img {
