@@ -45,10 +45,57 @@
           </div>
         </div>
       </div>
-
+      <!-- hero -->
+      <div class="container-fluid container-popular">
+        <h1>Popular</h1>
+        <div class="container-fluid container-popular-main">
+          <div class="book-popular">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-popular">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-popular">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-popular">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-popular">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-popular">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-popular">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-popular">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-popular">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-popular">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+          <div class="book-popular">
+            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div class="text-popular">
+              <h4>judul buku</h4>
+              <p>genre buku</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- hero -->
-     
+
+
   </main>
 
 </template>
@@ -74,6 +121,7 @@
   padding: 0 30px;
   border-radius: 15px;
 }
+
 /* nav */
 
 main {
@@ -86,12 +134,14 @@ main {
   width: 90%;
   padding: 0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container-hero {
   background-image: linear-gradient(to bottom right, #E1C35D, #EEEBE1);
   padding: 0;
-  height: 410px;
+  height: 450px;
   gap: 130px;
   width: 100%;
   display: flex;
@@ -128,9 +178,42 @@ main {
   }
 
   #paragraf p {
-text-align: justify;
+    text-align: justify;
   }
 }
-/* hero css */
 
+/* hero css */
+.container-popular h1 {
+  width: 85%;
+  margin: 50px auto;
+}
+
+.container-popular-main {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+
+}
+
+.book-popular {
+  width: 185px;
+  height: 320px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+}
+
+.book-popular img {
+  width: 100%;
+  height: 220px;
+  object-fit: fill;
+}
+
+.text-popular {
+  padding: 10px;
+
+}
 </style>
