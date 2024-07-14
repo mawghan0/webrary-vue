@@ -14,10 +14,13 @@
 .container-custom {
   width: 90%;
   margin: 0 auto;
+  position: fixed;
+  left: 50px;
 }
 
 .custom-navbar {
-  height: 140px;
+  height: 100px;
+  
 }
 
 .navbar-brand img {
