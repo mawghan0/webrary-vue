@@ -114,8 +114,14 @@ main {
   box-shadow: 0 0 10px black;
 }
 
+.text-button::-webkit-scrollbar {
+    display: none;
+}
+
 .text-button {
-  height: 100%;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  height: 83vh;
   /* border: 5px solid black; */
   display: flex;
   border-radius: 20px;
@@ -125,41 +131,23 @@ main {
   /* background-color: white; */
   width: 70%;
   margin: 130px 0 0 400px;
-  /* overflow: scroll; */
+  overflow: auto;
   row-gap: 20px;
 }
 
-/* .button {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
-  align-items: center;
-}
-
-.pinjam,
-.review,
-.riwayat {
-  width: 800px;
-  background-color: black;
-  color: white;
-  border-radius: 20px;
-  height: 40px
-} */
-
- .review {
+.review {
   border: 3px solid black;
   /* height: 200px; */
   border-radius: 20px;
-padding: 10px 20px;
- }
+  padding: 10px 20px;
+}
 
- .review h3 {
+.review h3 {
   font-weight: 500;
- }
+}
 
- .review h4 {
+.review h4 {
   font-weight: 400;
   font-size: 16px;
- }
+}
 </style>

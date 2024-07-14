@@ -1,5 +1,5 @@
 <script setup>
-// import HistoryComponent from '@/components/HistoryComponent.vue';
+
 </script>
 
 <template>
@@ -72,7 +72,6 @@ container-custom {
   display: flex;
   flex-direction: column;
   /* margin-top: 20px; */
-
 }
 
 .list-history {
@@ -84,7 +83,7 @@ container-custom {
   background-color: #D9D9D9;
   /* justify-content: space-evenly; */
   gap: 30px;
-  margin-top: 20px;
+  margin-top: 40px
 }
 
 .img {
