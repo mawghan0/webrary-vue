@@ -11,19 +11,24 @@
 </template>
 
 <style scoped>
+.custom-navbar {
+  position: fixed;
+  width: 100%;
+}
+
 .container-custom {
   width: 90%;
   margin: 0 auto;
-  position: fixed;
+  position: absolute;
   left: 50px;
 }
 
 .custom-navbar {
   height: 100px;
-  
+
 }
 
 .navbar-brand img {
-  margin-top: -10px;
+  /* margin-top: -10px; */
 }
 </style>

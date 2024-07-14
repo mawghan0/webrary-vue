@@ -19,7 +19,7 @@
     <!-- nav -->
     <div class="container-fluid container-custom-main d-flex">
       <div class="container-fluid container-hero">
-        <div class="hero-img"><img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW"></div>
+        <div class="hero-img"><router-link to="/home/detail/1"><img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW"></router-link></div>
         <div class="hero-text">
           <div id="judul">
             <h1>Judul buku</h1>
@@ -461,7 +461,7 @@
 }
 
 .navbar-brand img {
-  /* margin-top: -50px; */
+  
 }
 
 .search-custom {
@@ -507,6 +507,7 @@ main {
   overflow: hidden;
   border: 3px black solid;
   border-radius: 10px;
+  box-shadow: 0 0 5px black;
 }
 
 .hero-img img {

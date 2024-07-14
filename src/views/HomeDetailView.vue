@@ -41,7 +41,7 @@ main {
 .container-custom {
   /* border: 1px black solid; */
   display: flex;
-  min-height: 87vh;
+  min-height: 100vh;
   gap: 100px;
   align-items: center;
   
@@ -50,7 +50,7 @@ main {
 .img {
   height: 470px;
   width: 350px;
-
+margin-top: 60px
 }
 
 .img img {
@@ -70,6 +70,7 @@ main {
   padding: 20px;
   text-align: justify;
   background-color: white;
+  margin-top: 60px
 }
 
 .button {
