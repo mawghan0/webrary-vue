@@ -136,7 +136,7 @@
         </div>
         <div class="newArrival">
           <div class="trio-sort">
-            <h1>Rangking</h1>
+            <h1>New Arrival</h1>
           </div>
           <div class="trio-book">
             <div class="trio-single-book">
@@ -175,7 +175,7 @@
         </div>
         <div class="recommended">
           <div class="trio-sort">
-            <h1>Rangking</h1>
+            <h1>Recommend</h1>
           </div>
           <div class="trio-book">
             <div class="trio-single-book">
@@ -213,6 +213,7 @@
           </div>
         </div>
       </div>
+    <!-- trio -->
       <div class="container-fluid container-all">
         <div class="all-text">
           <h1>All Books</h1>
@@ -435,6 +436,7 @@
           <h6>Bantuan</h6>
         </div>
       </div>
+      <!-- footer -->
     </div>
 
 
@@ -446,10 +448,12 @@
 .container-custom {
   width: 90%;
   margin: 0 auto;
+  position: absolute;
+  left: 50px;
 }
 
 .custom-navbar {
-  height: 140px;
+  height: 100px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -457,12 +461,12 @@
 }
 
 .navbar-brand img {
-  margin-top: -10px;
+  /* margin-top: -50px; */
 }
 
 .search-custom {
-  width: 710px;
-  height: 60px;
+  width: 500px;
+  height: 50px;
   font-size: 36px;
   padding: 0 30px;
   border-radius: 15px;
@@ -482,7 +486,7 @@ main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-top: 140px;
+  margin-top: 100px;
 }
 
 .container-hero {
