@@ -1,8 +1,25 @@
 <script setup>
 import NavbarComponent from '@/components/NavbarComponent.vue';
+import { ref } from 'vue';
+
+const showModal = ref(false);
+
+function pinjamBuku(){
+alert("halo");
+}
 </script>
 
 <template>
+  <div v-if="showModal" class="form-overlay">
+<div class="form-modal">
+  <h1>Konfirmasi Peminjaman</h1>
+  <div class="button-overlay">
+    <input @click="showModal = false" type="button" value="Batal">
+    <router-link to="/about/history/all" ><input @click="pinjamBuku" type="button" value="Konfirmasi"></router-link>
+    
+  </div>
+</div>
+  </div>
   <NavbarComponent />
   <main> <div class="container container-custom">
     <div class="img">
@@ -25,9 +42,9 @@ import NavbarComponent from '@/components/NavbarComponent.vue';
           consectetur mollitia corrupti.</p>
       </div>
       <div class="button">
-        <input type="button" value="Pinjam" class="pinjam">
+        <input @click="showModal = true" type="button" value="Pinjam" class="pinjam">
         <router-link to="/review"><input type="button" value="Review" class="review" ></router-link>
-          <router-link to="/about/history"><input type="button" value="Riwayat Pinjam" class="riwayat"></router-link>
+          <router-link to="/about/history/all"><input type="button" value="Riwayat Pinjam" class="riwayat"></router-link>
       </div>
     </div>
   </div></main>
@@ -35,6 +52,48 @@ import NavbarComponent from '@/components/NavbarComponent.vue';
 </template>
 
 <style scoped>
+.form-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.786);
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-modal {
+  height: 200px;
+  background-color: rgba(255, 243, 243, 0.641);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+}
+.button-overlay {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.button-overlay input:first-child{
+  width: 100px;
+  height: 40px;
+  color: white;
+  background-color: red;
+  border-radius: 20px;
+}
+.button-overlay input:last-child{
+  width: 150px;
+  height: 40px;
+color: white;
+border-radius: 20px;
+  background-color: green;
+}
+/* overlay modal */
 main {
   background-color: #EEEBE1;
 }
