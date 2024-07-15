@@ -1,19 +1,33 @@
 <script setup>
 import NavbarComponent from '@/components/NavbarComponent.vue';
+import { ref, onMounted } from 'vue';
 import { useRouter, RouterView, useRoute, RouterLink } from 'vue-router';
+import api from '@/api';
 
 const route = useRoute();
 const router = useRouter();
+const user = ref();
 // console.log(router.getRoutes);
 
 function showProfile() {
-  router.push({name: "profile"});
+  router.push({ name: "profile" });
 }
 function showHistory() {
-  router.push({name: "history"});
-  router.push({name: "all"});
+  router.push({ name: "history" });
+  router.push({ name: "all" });
 }
 
+onMounted(async () => {
+
+  try {
+    const response = await api.get(`/users`);
+    user.value = response.data;
+
+  } catch (error) {
+    user.value = error;
+    console.error("Error fetching book details:", error);
+  }
+});
 
 </script>
 
@@ -21,14 +35,18 @@ function showHistory() {
   <NavbarComponent />
   <main>
     <div class="container container-custom">
-      <div class="about">
-        <h1>Nama Pengguna</h1>
-        <input @click="showProfile" type="button" value="Akun Saya" :class="{ active: route.fullPath == '/about/profile'}">
-        <input @click="showHistory" type="button" value="Riwayat Pinjam" :class="{ active: route.fullPath ==  '/about/history/borrow' || route.fullPath == '/about/history/all' || route.fullPath == '/about/history/return'}">
+      <p v-if="!user">Loading user data...</p>
+      <!-- <div v-else></div> -->
+      <div v-else class="about">
+        <h1>Halo {{ user.user }}</h1>
+        <input @click="showProfile" type="button" value="Akun Saya"
+          :class="{ active: route.fullPath == '/about/profile' }">
+        <input @click="showHistory" type="button" value="Riwayat Pinjam"
+          :class="{ active: route.fullPath == '/about/history/borrow' || route.fullPath == '/about/history/all' || route.fullPath == '/about/history/return' }">
         <router-link to="/login"><input type="button" value="Keluar"></router-link>
       </div>
       <div class="dinamis">
-        <RouterView/>
+        <RouterView />
       </div>
     </div>
   </main>
@@ -39,11 +57,13 @@ main {
   background-color: #EEEBE1;
   min-height: 100vh;
 }
+
 .container-custom {
   display: flex;
   /* border: 1px black solid; */
   justify-content: space-between;
 }
+
 .about {
   margin-top: 200px;
   border: 3px black solid;
@@ -58,6 +78,7 @@ main {
   box-shadow: 10px 10px 20px black;
   position: fixed;
 }
+
 .about h1 {
   font-size: 2em;
 }
@@ -78,7 +99,7 @@ main {
   margin-top: 200px;
   /* height: 100vh; */
   margin-left: 400px;
-  overflow:hidden;
+  overflow: hidden;
 
 }
 

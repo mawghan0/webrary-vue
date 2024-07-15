@@ -1,3 +1,23 @@
+<script setup>
+import api from '@/api';
+import { ref } from 'vue';
+
+const name = ref('');
+
+const putName  = async () => {
+  try {
+    const response = await api.put(`/users`, {
+      name: name.value,
+    });
+    alert("Username berhasil dirubah");
+    console.log('Review submitted successfully:', response.data);
+  } catch (error) {
+    // error.value = response;
+    console.error('Error submitting review:', error);
+  }
+};
+</script>
+
 <template>
 
   <div class="container-fluid profile">
@@ -9,8 +29,8 @@
       <h2>Update username disini</h2>
       <form action="">
         <Label for="user">Username :</Label>
-        <input type="text" value="contoh123" name="user" id="user">
-        <input type="button" value="Update username!" id="update">
+        <input v-model="name" type="text" value="contoh123" name="user" id="user">
+        <input @click="putName" type="button" value="Update username!" id="update">
       </form>
     </div>
   </div>
