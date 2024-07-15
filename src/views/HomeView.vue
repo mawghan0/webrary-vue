@@ -2,11 +2,41 @@
 import { ref, onMounted } from 'vue';
 import api from '@/api';
 
+const hero = ref();
+const populars = ref([]);
+const rangkings = ref([]);
+const newAs = ref([]);
+const recommends = ref([]);
 const books = ref([]);
 
 onMounted(async () => {
-  const response = await api.get('http://webrary-app.test/api/books');
-  books.value = response.data;
+  try {
+    // Mengambil data books
+    const booksResponse = await api.get('/books');
+    books.value = booksResponse.data;
+
+    // Mengambil data hero
+    const heroResponse = await api.get('/books/hero');
+    hero.value = heroResponse.data;
+
+    // rangking
+    const rangkingResponse = await api.get('/books/rangking');
+    rangkings.value = rangkingResponse.data;
+
+    // newArrival
+    const newAResponse = await api.get('/books/new');
+    newAs.value = newAResponse.data;
+
+    // recommend
+    const recommendResponse = await api.get('/books/recommend');
+    recommends.value = recommendResponse.data;
+
+    // popular
+    const popularResponse = await api.get('/books/popular');
+    populars.value = popularResponse.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
 });
 </script>
 
@@ -26,31 +56,17 @@ onMounted(async () => {
     </nav>
     <!-- nav -->
     <div class="container-fluid container-custom-main d-flex">
-      <div class="container-fluid container-hero">
-        <div class="hero-img"><router-link to="/home/detail/1"><img
-              src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW"></router-link></div>
+      <div v-if="hero" class="container-fluid container-hero">
+        <div class="hero-img"><router-link :to="{ name: 'detail', params: { id: hero.id } }"><img
+              :src="hero.cover_image"></router-link></div>
         <div class="hero-text">
           <div id="judul">
-            <h1>Judul buku</h1>
-            <h3>Genre buku</h3>
+            <h1>{{ hero.title }}</h1>
+            <h3>{{ hero.genre }}</h3>
           </div>
           <div id="paragraf">
             <h3>sinopsis</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quisquam dolor alias praesentium
-              dignissimos eaque, earum ab aliquam, libero vitae nam. Minus voluptas cumque, distinctio eius maiores
-              temporibus a deserunt!
-              Assumenda obcaecati facilis temporibus commodi. Mollitia tempore, ab aliquid amet dolorem doloremque. Iste
-              saepe, illo aut quam assumenda eveniet ratione sapiente soluta officiis, minima ex officia dicta eum neque
-              cupiditate?
-              Eveniet repellendus itaque consequuntur, atque vero possimus laborum? Eos natus vitae aliquid amet, nobis
-              debitis enim voluptate, accusantium consectetur non, molestias id! Similique nihil quam quo iste sunt
-              blanditiis non.
-              Pariatur, labore. Nulla consectetur inventore ipsum deserunt nam saepe autem blanditiis maxime eveniet
-              provident, quibusdam doloremque iusto, vitae officiis eum id, consequatur odio quisquam maiores. Dolorum
-              atque magnam culpa nam.
-              Ea maxime, quis, voluptatem eum architecto quasi ullam consectetur iste perferendis aperiam, quia deserunt
-              rerum distinctio debitis adipisci? Error, accusantium. Explicabo, possimus dolores blanditiis dignissimos
-              consectetur nihil id obcaecati sed.</p>
+            <p>{{ hero.description }}</p>
           </div>
         </div>
       </div>
@@ -58,48 +74,16 @@ onMounted(async () => {
       <div class="container-fluid container-popular">
         <h1>Popular</h1>
         <div class="container-fluid container-popular-main">
-          <div class="book-popular">
-            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-            <div class="text-popular">
-              <h4>judul buku</h4>
-              <p>genre buku</p>
-            </div>
+          <div v-for="popular in populars" :key="popular.id" class="book-popular">
+            <router-link :to="{ name: 'detail', params: { id: popular.id } }" class="custom-link">
+              <img :src="popular.cover_image" alt="cover_image">
+              <div class="text-popular">
+                <h4>{{ popular.title }}</h4>
+                <p>{{ popular.genre }}</p>
+              </div>
+            </router-link>
           </div>
-          <div class="book-popular">
-            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-            <div class="text-popular">
-              <h4>judul buku</h4>
-              <p>genre buku</p>
-            </div>
-          </div>
-          <div class="book-popular">
-            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-            <div class="text-popular">
-              <h4>judul buku</h4>
-              <p>genre buku</p>
-            </div>
-          </div>
-          <div class="book-popular">
-            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-            <div class="text-popular">
-              <h4>judul buku</h4>
-              <p>genre buku</p>
-            </div>
-          </div>
-          <div class="book-popular">
-            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-            <div class="text-popular">
-              <h4>judul buku</h4>
-              <p>genre buku</p>
-            </div>
-          </div>
-          <div class="book-popular">
-            <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-            <div class="text-popular">
-              <h4>judul buku</h4>
-              <p>genre buku</p>
-            </div>
-          </div>
+
         </div>
       </div>
       <!-- popular -->
@@ -109,37 +93,15 @@ onMounted(async () => {
             <h1>Rangking</h1>
           </div>
           <div class="trio-book">
-            <div class="trio-single-book">
-              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div v-for="rangking in rangkings" :key="rangking.id" class="trio-single-book">
+              <router-link :to="{ name: 'detail', params: { id: rangking.id } }" class="custom-link">
+              <img :src="rangking.cover_image" alt="cover_image">
               <div class="trio-text">
-                <h2>Judul buku</h2>
-                <p>genre buku</p>
-                <p>&star; 5</p>
+                <h2>{{ rangking.title }}</h2>
+                <p>{{ rangking.genre }}</p>
+                <p>&star; {{ rangking.rating }}</p>
               </div>
-            </div>
-            <div class="trio-single-book">
-              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-              <div class="trio-text">
-                <h2>Judul buku</h2>
-                <p>genre buku</p>
-                <p>&star; 5</p>
-              </div>
-            </div>
-            <div class="trio-single-book">
-              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-              <div class="trio-text">
-                <h2>Judul buku</h2>
-                <p>genre buku</p>
-                <p>&star; 5</p>
-              </div>
-            </div>
-            <div class="trio-single-book">
-              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-              <div class="trio-text">
-                <h2>Judul buku</h2>
-                <p>genre buku</p>
-                <p>&star; 5</p>
-              </div>
+            </router-link>
             </div>
           </div>
         </div>
@@ -148,37 +110,15 @@ onMounted(async () => {
             <h1>New Arrival</h1>
           </div>
           <div class="trio-book">
-            <div class="trio-single-book">
-              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div v-for="newA in newAs" :key="newA.id" class="trio-single-book">
+              <router-link :to="{ name: 'detail', params: { id: newA.id } }" class="custom-link">
+              <img :src="newA.cover_image" alt="">
               <div class="trio-text">
-                <h2>Judul buku</h2>
-                <p>genre buku</p>
-                <p>&star; 5</p>
+                <h2>{{ newA.title }}</h2>
+                <p>{{ newA.genre }}</p>
+                <p>&star; {{ newA.rating }}</p>
               </div>
-            </div>
-            <div class="trio-single-book">
-              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-              <div class="trio-text">
-                <h2>Judul buku</h2>
-                <p>genre buku</p>
-                <p>&star; 5</p>
-              </div>
-            </div>
-            <div class="trio-single-book">
-              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-              <div class="trio-text">
-                <h2>Judul buku</h2>
-                <p>genre buku</p>
-                <p>&star; 5</p>
-              </div>
-            </div>
-            <div class="trio-single-book">
-              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-              <div class="trio-text">
-                <h2>Judul buku</h2>
-                <p>genre buku</p>
-                <p>&star; 5</p>
-              </div>
+            </router-link>
             </div>
           </div>
         </div>
@@ -187,37 +127,15 @@ onMounted(async () => {
             <h1>Recommend</h1>
           </div>
           <div class="trio-book">
-            <div class="trio-single-book">
-              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+            <div v-for="recommend in recommends" :key="recommend.id" class="trio-single-book">
+              <router-link :to="{ name: 'detail', params: { id: recommend.id } }" class="custom-link">
+              <img :src="recommend.cover_image" alt="">
               <div class="trio-text">
-                <h2>Judul buku</h2>
-                <p>genre buku</p>
-                <p>&star; 5</p>
+                <h2>{{ recommend.title }}</h2>
+                <p>{{ recommend.genre }}</p>
+                <p>&star; {{ recommend.rating }}</p>
               </div>
-            </div>
-            <div class="trio-single-book">
-              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-              <div class="trio-text">
-                <h2>Judul buku</h2>
-                <p>genre buku</p>
-                <p>&star; 5</p>
-              </div>
-            </div>
-            <div class="trio-single-book">
-              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-              <div class="trio-text">
-                <h2>Judul buku</h2>
-                <p>genre buku</p>
-                <p>&star; 5</p>
-              </div>
-            </div>
-            <div class="trio-single-book">
-              <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-              <div class="trio-text">
-                <h2>Judul buku</h2>
-                <p>genre buku</p>
-                <p>&star; 5</p>
-              </div>
+            </router-link>
             </div>
           </div>
         </div>
@@ -427,6 +345,10 @@ main {
 
 }
 
+.text-popular h4 {
+  font-size: 1.2em;
+}
+
 /* pupular css */
 
 .custom-trio {
@@ -467,22 +389,39 @@ main {
 
 .trio-single-book {
   display: flex;
+  flex-direction: row;
   height: 110px;
   padding: 10px 10px;
   box-shadow: 10px 10px 20px black;
   background-color: #D9D9D9;
+  border: 1px solid black;
+  /* justify-content: space-around; */
+  /* gap: 10px; */
 }
 
-.trio-single-book img {
+.trio-single-book .custom-link img {
   height: 90px;
   width: 60px;
   object-fit: cover;
   box-shadow: 0 0 10px black;
+  /* display: inline; */
+  top: 0;
+  vertical-align:top;
 }
 
 .trio-text {
-  padding: 0 40px;
+  padding: 0 10px;
   line-height: 10px;
+  /* border: 1px solid black; */
+  width: 240px;
+  height: 100%;
+  overflow: hidden;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.trio-text h2 {
+  font-size: 1em;
 }
 
 /* trio css */
