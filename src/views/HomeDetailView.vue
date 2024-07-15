@@ -1,6 +1,21 @@
 <script setup>
 import NavbarComponent from '@/components/NavbarComponent.vue';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import api from '@/api';
+
+const route = useRoute();
+const book = ref(null);
+
+onMounted(async () => {
+  const bookId = route.params.id;
+  try {
+    const response = await api.get(`/books/${bookId}`);
+    book.value = response.data;
+  } catch (error) {
+    console.error("Error fetching book details:", error);
+  }
+});
 
 const showModal = ref(false);
 
@@ -22,27 +37,14 @@ function pinjamBuku() {
   </div>
   <NavbarComponent />
   <main>
-    <div class="container container-custom">
+    <div v-if="book" class="container container-custom">
       <div class="img">
-        <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+        <img :src="book.cover_image" alt="cover_buku">
       </div>
       <div class="text-button">
         <div class="sinopsis">
-          <h1>Judul Buku</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nemo unde ad laboriosam officiis vel
-            recusandae, libero ipsum dolorum! Eveniet reiciendis quasi at rerum commodi aperiam adipisci, accusamus
-            excepturi quam.
-            Iste nemo molestias esse quaerat culpa earum dicta placeat reiciendis dolorum molestiae consectetur,
-            adipisci
-            hic magnam doloremque, labore voluptates unde optio corrupti id. Iure, odit nostrum a accusantium harum
-            repellat?
-            Harum voluptatibus ipsam atque soluta amet aut excepturi quae numquam temporibus eum earum repellat, esse
-            est
-            possimus fugit praesentium. Est laboriosam deleniti ipsa quia, tempore quis dolore nemo voluptatem
-            accusantium!
-            Velit incidunt dolores magni nemo unde officiis, molestias dolor. At veritatis laboriosam possimus mollitia
-            perspiciatis. Natus non quaerat, eum aperiam, incidunt quam totam laudantium voluptatem cumque pariatur
-            consectetur mollitia corrupti.</p>
+          <h1>{{ book.title }}</h1>
+          <p>{{ book.description }}</p>
         </div>
         <div class="button">
           <input @click="showModal = true" type="button" value="Pinjam" class="pinjam">
@@ -145,9 +147,11 @@ main {
 .button {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content:end;
+  gap: 10px;
   height: 100%;
   align-items: center;
+  /* border: 1px solid black; */
 }
 
 .pinjam,
