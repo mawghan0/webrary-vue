@@ -184,6 +184,7 @@ main {
   border: 3px solid black;
   /* height: 200px; */
   border-radius: 20px;
+  background-color: white;
   padding: 10px 20px;
 }
 

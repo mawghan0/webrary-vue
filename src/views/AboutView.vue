@@ -7,6 +7,7 @@ import api from '@/api';
 const route = useRoute();
 const router = useRouter();
 const user = ref();
+const showModal = ref(false);
 // console.log(router.getRoutes);
 
 function showProfile() {
@@ -29,10 +30,33 @@ onMounted(async () => {
   }
 });
 
+const logout = async () => {
+  try {
+    const response = await api.post(`/logout`);
+    // error.value = response;
+    alert("Berhasil logout");
+    // hideModal(borrow);
+    router.push('/login')
+    console.log('Review submitted successfully:', response.data);
+  } catch (error) {
+    // error.value = response;
+    console.error('Error submitting review:', error);
+  }
+};
 </script>
 
 <template>
   <NavbarComponent />
+  <div v-if="showModal" class="form-overlay">
+    <div class="form-modal">
+      <h1>Apakah anda akan keluar?</h1>
+      <div class="button-overlay">
+        <input @click="showModal = false" type="button" value="Batal">
+        <input @click="logout" type="button" value="Konfirmasi">
+
+      </div>
+    </div>
+  </div>
   <main>
     <div class="container container-custom">
       <p v-if="!user">Loading user data...</p>
@@ -43,7 +67,7 @@ onMounted(async () => {
           :class="{ active: route.fullPath == '/about/profile' }">
         <input @click="showHistory" type="button" value="Riwayat Pinjam"
           :class="{ active: route.fullPath == '/about/history/borrow' || route.fullPath == '/about/history/all' || route.fullPath == '/about/history/return' }">
-        <router-link to="/login"><input type="button" value="Keluar"></router-link>
+        <input @click="showModal = true" type="button" value="Keluar">
       </div>
       <div class="dinamis">
         <RouterView />
@@ -53,6 +77,53 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+.form-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.786);
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-modal {
+  height: 200px;
+  background-color: rgba(255, 243, 243, 0.641);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+}
+
+.button-overlay {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.button-overlay input:first-child {
+  width: 100px;
+  height: 40px;
+  color: white;
+  background-color: red;
+  border-radius: 20px;
+}
+
+.button-overlay input:last-child {
+  width: 150px;
+  height: 40px;
+  color: white;
+  border-radius: 20px;
+  background-color: green;
+}
+
+/* overlay modal */
+
 main {
   background-color: #EEEBE1;
   min-height: 100vh;
