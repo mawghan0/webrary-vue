@@ -95,13 +95,13 @@ onMounted(async () => {
           <div class="trio-book">
             <div v-for="rangking in rangkings" :key="rangking.id" class="trio-single-book">
               <router-link :to="{ name: 'detail', params: { id: rangking.id } }" class="custom-link">
-              <img :src="rangking.cover_image" alt="cover_image">
-              <div class="trio-text">
-                <h2>{{ rangking.title }}</h2>
-                <p>{{ rangking.genre }}</p>
-                <p>&star; {{ rangking.rating }}</p>
-              </div>
-            </router-link>
+                <img :src="rangking.cover_image" alt="cover_image">
+                <div class="trio-text">
+                  <h2>{{ rangking.title }}</h2>
+                  <p>{{ rangking.genre }}</p>
+                  <p>&star; {{ rangking.rating }}</p>
+                </div>
+              </router-link>
             </div>
           </div>
         </div>
@@ -112,13 +112,13 @@ onMounted(async () => {
           <div class="trio-book">
             <div v-for="newA in newAs" :key="newA.id" class="trio-single-book">
               <router-link :to="{ name: 'detail', params: { id: newA.id } }" class="custom-link">
-              <img :src="newA.cover_image" alt="">
-              <div class="trio-text">
-                <h2>{{ newA.title }}</h2>
-                <p>{{ newA.genre }}</p>
-                <p>&star; {{ newA.rating }}</p>
-              </div>
-            </router-link>
+                <img :src="newA.cover_image" alt="">
+                <div class="trio-text">
+                  <h2>{{ newA.title }}</h2>
+                  <p>{{ newA.genre }}</p>
+                  <p>&star; {{ newA.rating }}</p>
+                </div>
+              </router-link>
             </div>
           </div>
         </div>
@@ -129,13 +129,13 @@ onMounted(async () => {
           <div class="trio-book">
             <div v-for="recommend in recommends" :key="recommend.id" class="trio-single-book">
               <router-link :to="{ name: 'detail', params: { id: recommend.id } }" class="custom-link">
-              <img :src="recommend.cover_image" alt="">
-              <div class="trio-text">
-                <h2>{{ recommend.title }}</h2>
-                <p>{{ recommend.genre }}</p>
-                <p>&star; {{ recommend.rating }}</p>
-              </div>
-            </router-link>
+                <img :src="recommend.cover_image" alt="">
+                <div class="trio-text">
+                  <h2>{{ recommend.title }}</h2>
+                  <p>{{ recommend.genre }}</p>
+                  <p>&star; {{ recommend.rating }}</p>
+                </div>
+              </router-link>
             </div>
           </div>
         </div>
@@ -406,7 +406,7 @@ main {
   box-shadow: 0 0 10px black;
   /* display: inline; */
   top: 0;
-  vertical-align:top;
+  vertical-align: top;
 }
 
 .trio-text {

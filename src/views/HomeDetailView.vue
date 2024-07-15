@@ -1,9 +1,10 @@
 <script setup>
 import NavbarComponent from '@/components/NavbarComponent.vue';
 import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import api from '@/api';
 
+const router = useRouter();
 const route = useRoute();
 const book = ref(null);
 
@@ -19,9 +20,19 @@ onMounted(async () => {
 
 const showModal = ref(false);
 
-function pinjamBuku() {
-  alert("halo");
-}
+const postBook = async () => {
+  try {
+    const bookId = route.params.id;
+    const response = await api.post(`/borrowings/${bookId}`);
+    // error.value = response;
+    alert("Buku berhasil dipinjam");
+    router.push('/about/history/all')
+    console.log('Review submitted successfully:', response.data);
+  } catch (error) {
+    // error.value = response;
+    console.error('Error submitting review:', error);
+  }
+};
 </script>
 
 <template>
@@ -30,7 +41,7 @@ function pinjamBuku() {
       <h1>Konfirmasi Peminjaman</h1>
       <div class="button-overlay">
         <input @click="showModal = false" type="button" value="Batal">
-        <router-link to="/about/history/all"><input @click="pinjamBuku" type="button" value="Konfirmasi"></router-link>
+        <input @click="postBook" type="button" value="Konfirmasi">
 
       </div>
     </div>
@@ -48,7 +59,8 @@ function pinjamBuku() {
         </div>
         <div class="button">
           <input @click="showModal = true" type="button" value="Pinjam" class="pinjam">
-          <router-link to="/review"><input type="button" value="Review" class="review"></router-link>
+          <router-link :to="{ name: 'review', params: { id: book.id } }"><input type="button" value="Review"
+              class="review"></router-link>
           <router-link to="/about/history/all"><input type="button" value="Riwayat Pinjam"
               class="riwayat"></router-link>
         </div>
@@ -147,7 +159,7 @@ main {
 .button {
   display: flex;
   flex-direction: column;
-  justify-content:end;
+  justify-content: end;
   gap: 10px;
   height: 100%;
   align-items: center;
