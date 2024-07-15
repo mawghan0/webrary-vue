@@ -1,97 +1,32 @@
 <script setup>
-// import HistoryComponent from '@/components/HistoryComponent.vue';
+import { ref, onMounted } from 'vue';
+import api from '@/api';
+
+const borrows = ref([]);
+
+onMounted(async () => {
+  try {
+    const response = await api.get(`/borrowings/return`);
+    borrows.value = response.data;
+
+  } catch (error) {
+    user.value = error;
+    console.error("Error fetching book details:", error);
+  }
+});
+
 </script>
 
 <template>
   <div class="container-fluid container-custom">
-    <div class="container-fluid list-history">
+    <div v-for="borrow in borrows" :key="borrow.id" class="container-fluid list-history">
       <div class="img">
-        <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+        <img :src="borrow.cover_image" alt="">
       </div>
       <div class="text">
         <div class="judul">
-          <h1>Judul buku</h1>
-          <h4>Pengarang buku</h4>
-        </div>
-        <h3>Buku telah dikembalikan</h3>
-      </div>
-      <div class="pinjam">
-        <h4>Selesai</h4>
-        <!-- <input type="button" value="Perpanjang"> -->
-      </div>
-    </div>
-    <div class="container-fluid list-history">
-      <div class="img">
-        <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-      </div>
-      <div class="text">
-        <div class="judul">
-          <h1>Judul buku</h1>
-          <h4>Pengarang buku</h4>
-        </div>
-        <h3>Buku telah dikembalikan</h3>
-      </div>
-      <div class="pinjam">
-        <h4>Selesai</h4>
-        <!-- <input type="button" value="Perpanjang"> -->
-      </div>
-    </div>
-    <div class="container-fluid list-history">
-      <div class="img">
-        <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-      </div>
-      <div class="text">
-        <div class="judul">
-          <h1>Judul buku</h1>
-          <h4>Pengarang buku</h4>
-        </div>
-        <h3>Buku telah dikembalikan</h3>
-      </div>
-      <div class="pinjam">
-        <h4>Selesai</h4>
-        <!-- <input type="button" value="Perpanjang"> -->
-      </div>
-    </div>
-    <div class="container-fluid list-history">
-      <div class="img">
-        <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-      </div>
-      <div class="text">
-        <div class="judul">
-          <h1>Judul buku</h1>
-          <h4>Pengarang buku</h4>
-        </div>
-        <h3>Buku telah dikembalikan</h3>
-      </div>
-      <div class="pinjam">
-        <h4>Selesai</h4>
-        <!-- <input type="button" value="Perpanjang"> -->
-      </div>
-    </div>
-    <div class="container-fluid list-history">
-      <div class="img">
-        <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-      </div>
-      <div class="text">
-        <div class="judul">
-          <h1>Judul buku</h1>
-          <h4>Pengarang buku</h4>
-        </div>
-        <h3>Buku telah dikembalikan</h3>
-      </div>
-      <div class="pinjam">
-        <h4>Selesai</h4>
-        <!-- <input type="button" value="Perpanjang"> -->
-      </div>
-    </div>
-    <div class="container-fluid list-history">
-      <div class="img">
-        <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-      </div>
-      <div class="text">
-        <div class="judul">
-          <h1>Judul buku</h1>
-          <h4>Pengarang buku</h4>
+          <h1>{{ borrow.title }}</h1>
+          <h4>{{ borrow.genre }}</h4>
         </div>
         <h3>Buku telah dikembalikan</h3>
       </div>

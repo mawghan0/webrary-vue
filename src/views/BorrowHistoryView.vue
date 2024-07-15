@@ -1,124 +1,84 @@
 <script setup>
 import NavbarComponent from '@/components/NavbarComponent.vue';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import api from '@/api';
 
-const showModal = ref(false);
+const borrows = ref([]);
+// const showModal = ref(false);
+const showModals = ref({});
 
-function pinjamBuku(){
-showModal.value = false;
+function showModal(id) {
+  showModals.value[id] = true;
 }
+
+function hideModal(id) {
+  showModals.value[id] = false;
+}
+
+function isModalVisible(id) {
+  return !!showModals.value[id];
+}
+
+onMounted(async () => {
+  try {
+    const response = await api.get(`/borrowings/borrow`);
+    borrows.value = response.data;
+
+  } catch (error) {
+    user.value = error;
+    console.error("Error fetching book details:", error);
+  }
+});
+
+const putBook = async (borrow) => {
+  try {
+    const response = await api.put(`/borrowings/${borrow}`);
+    // error.value = response;
+    alert("Waktu Peminjaman Diperpanjang");
+    hideModal(borrow);
+    // router.push('/about/history/all')
+    console.log('Review submitted successfully:', response.data);
+  } catch (error) {
+    // error.value = response;
+    console.error('Error submitting review:', error);
+  }
+};
+// function pinjamBuku(){
+
+// showModal.value = false;
+// }
 </script>
 
 <template>
-    <div v-if="showModal" class="form-overlay">
-    <div class="form-modal">
-      <h1>Konfirmasi Perpanjangan</h1>
-      <div class="button-overlay">
-        <input @click="showModal = false" type="button" value="Batal">
-        <input @click="pinjamBuku" type="button" value="Konfirmasi">
 
-      </div>
-    </div>
-  </div>
   <div class="container-custom">
-    <div class="container-fluid list-history">
+    <div v-for="borrow in borrows" :key="borrow.id" class="container-fluid list-history">
       <div class="img">
-        <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
+        <img :src="borrow.cover_image" alt="">
       </div>
       <div class="text">
         <div class="judul">
-          <h1>Judul buku</h1>
-          <h4>Pengarang buku</h4>
+          <h1>{{ borrow.title }}</h1>
+          <h4>{{ borrow.genre }}</h4>
         </div>
-        <h3>Wajib dikembalikan 12-2-2024</h3>
+        <h3>Wajib dikembalikan {{ borrow.return_date }}</h3>
       </div>
       <div class="pinjam">
         <h4>Sedang Dipinjam</h4>
-        <input @click="showModal = true" type="button" value="Perpanjang">
+        <input @click="showModal(borrow.id)" type="button" value="Perpanjang">
       </div>
-    </div>
-    <div class="container-fluid list-history">
-      <div class="img">
-        <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-      </div>
-      <div class="text">
-        <div class="judul">
-          <h1>Judul buku</h1>
-          <h4>Pengarang buku</h4>
+      <div v-if="isModalVisible(borrow.id)" class="form-overlay">
+        <div class="form-modal">
+          <h1>Konfirmasi Perpanjangan</h1>
+          <div class="button-overlay">
+            <input @click="hideModal(borrow.id)" type="button" :value="borrow.id">
+            <input @click="putBook(borrow.id)" type="button" value="Konfirmasi">
+          </div>
         </div>
-        <h3>Wajib dikembalikan 12-2-2024</h3>
-      </div>
-      <div class="pinjam">
-        <h4>Sedang Dipinjam</h4>
-        <input type="button" value="Perpanjang">
-      </div>
-    </div>
-    <div class="container-fluid list-history">
-      <div class="img">
-        <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-      </div>
-      <div class="text">
-        <div class="judul">
-          <h1>Judul buku</h1>
-          <h4>Pengarang buku</h4>
-        </div>
-        <h3>Wajib dikembalikan 12-2-2024</h3>
-      </div>
-      <div class="pinjam">
-        <h4>Sedang Dipinjam</h4>
-        <input type="button" value="Perpanjang">
-      </div>
-    </div>
-    <div class="container-fluid list-history">
-      <div class="img">
-        <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-      </div>
-      <div class="text">
-        <div class="judul">
-          <h1>Judul buku</h1>
-          <h4>Pengarang buku</h4>
-        </div>
-        <h3>Buku wajib dikembalikan 12-2-2024</h3>
-      </div>
-      <div class="pinjam">
-        <h4>Sedang Dipinjam</h4>
-        <input type="button" value="Perpanjang">
-      </div>
-    </div>
-    <div class="container-fluid list-history">
-      <div class="img">
-        <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-      </div>
-      <div class="text">
-        <div class="judul">
-          <h1>Judul buku</h1>
-          <h4>Pengarang buku</h4>
-        </div>
-        <h3>Buku wajib dikembalikan 12-2-2024</h3>
-      </div>
-      <div class="pinjam">
-        <h4>Sedang Dipinjam</h4>
-        <input type="button" value="Perpanjang">
-      </div>
-    </div>
-    <div class="container-fluid list-history">
-      <div class="img">
-        <img src="https://drive.google.com/thumbnail?id=1uKIeJ5XFqqRufClUMeSVZ-MYgBHk8GqW" alt="">
-      </div>
-      <div class="text">
-        <div class="judul">
-          <h1>Judul buku</h1>
-          <h4>Pengarang buku</h4>
-        </div>
-        <h3>Buku wajib dikembalikan 12-2-2024</h3>
-      </div>
-      <div class="pinjam">
-        <h4>Sedang Dipinjam</h4>
-        <input type="button" value="Perpanjang">
       </div>
     </div>
   </div>
-  
+
 </template>
 
 <style scoped>
@@ -127,7 +87,7 @@ showModal.value = false;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.786);
+  background-color: rgba(0, 0, 0, 0.34);
   position: absolute;
   z-index: 10;
   display: flex;
