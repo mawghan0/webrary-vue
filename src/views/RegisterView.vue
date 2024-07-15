@@ -27,6 +27,7 @@ async function getUser() {
     // const token = response.data.token;
     // localStorage.setItem('authToken', token); // Simpan token di localStorage
     console.log(response);
+    alert("Akun telah berhasil terdaftar");
     router.push('/login'); // Redirect ke /home setelah login berhasil
   } catch (error) {
     console.error(error);
